@@ -33,6 +33,7 @@ class Crawler:
         # Initialize the ThreadPoolExecutor with a few workers
         self.pool = ThreadPoolExecutor(max_workers=5)
 
+    # Keep crawling until we either crawled all the URLs stemming from our base URL, or we reached our limit
     def run(self):
 
         while len(self.visited_urls) < self.limit:
@@ -87,7 +88,8 @@ class Crawler:
             links.append(link)
 
             if link not in self.visited_urls:
-                # If this link has been parsed, add it to the list of links we need to parse
+                
+                # If this link has not yet been visited, add to the list of links we need to parse
                 self.to_visit.put(link)
 
         return links
