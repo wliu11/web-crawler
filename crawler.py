@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# __author__ Wendy Liu
 import argparse
 import math
 import re
@@ -11,7 +12,6 @@ from bs4 import BeautifulSoup as soup
 
 
 def send_request(url):
-    # print("sending new request")
     response = requests.get(url)
     return response
 
@@ -20,10 +20,18 @@ class Crawler:
 
     def __init__(self, limit, url):
         self.limit = limit
+
+        # We use a set to record each URL we visit only once, and searching a set is fast
         self.visited_urls = set()
+
+        # We use a queue because we want to maintain the ordering of URLs, and this is best for multithreaded processes
         self.to_visit = Queue()
+
+        # Add our base URL
         self.to_visit.put(url)
-        self.pool = ThreadPoolExecutor(max_workers=12)
+
+        # Initialize the ThreadPoolExecutor with a few workers
+        self.pool = ThreadPoolExecutor(max_workers=5)
 
     def run(self):
 
@@ -38,8 +46,9 @@ class Crawler:
                     self.visited_urls.add(url)
 
                     # # Start the crawl
-                    self.pool.submit(self.crawl, url)
+                    results = self.pool.submit(self.crawl, url)
 
+                    # Suspend the thread temporarily
                     time.sleep(2)
 
             except Empty:
@@ -48,24 +57,40 @@ class Crawler:
                 print(e)
                 continue
 
+    # Send the request to a URL, download the response, and parse the HTML for links
     def crawl(self, url):
         response = send_request(url)
-        self.get_urls(response.text, url)
 
+        # Return is only for testing, since the spec asks us to print to console
+        return self.get_urls(response.text, url)
+
+    # Scrape the HTML file for URLs
     def get_urls(self, html, url):
+        # Print the base URL without indent
         print(url)
         page_soup = soup(html, "html.parser")
-        search_criteria = re.compile("http://|https://")
-        links = []
+
+        # Filter only links that begin with 'http' or 'https', ignoring relative paths
+        search_criteria = re.compile("^(http|https)://")
 
         results = page_soup.findAll('a', attrs={'href': search_criteria})
-        for unedited_link in results:
 
+        # Only for testing
+        links = []
+
+        for unedited_link in results:
             link = unedited_link.get('href')
+
+            # Print the children URLs with a single indent
             print('\t' + link)
+
             links.append(link)
+
             if link not in self.visited_urls:
+                # If this link has been parsed, add it to the list of links we need to parse
                 self.to_visit.put(link)
+
+        return links
 
 
 if __name__ == '__main__':
@@ -83,4 +108,5 @@ if __name__ == '__main__':
     # Instantiate the Crawling class with the arguments supplied
     crawler = Crawler(limit=args.limit, url=args.url[0])
 
+    # Run the web crawler
     crawler.run()

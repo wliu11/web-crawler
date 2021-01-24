@@ -1,0 +1,1162 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Rescale is a cloud simulation platform that helps engineers and scientists build, compute, analyze, and scale simulations with high performance computing (HPC) in the cloud">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"6305d18764",applicationID:"3643392"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1194.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"6305d18764","applicationID":"3643392","transactionName":"YVwBNxZVX0sAVUxZXFgWJRYKV0VRDlgXVFlXVwQMSldeVhVEUVIdV10OCgpQXlsSGFVZV1JVBhQFRlQCOWBRVUR7UAcHCFFGWRNTFkBBWVoGEBdrR1EEQQ==","queueTime":1,"applicationTime":34,"agent":""}</script>
+  <title>Intelligent HPC Platform | Rescale</title>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+  <script src="https://use.typekit.net/ydl7dey.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/vendor/jquery-ui-1.10.2.custom.min.0f4a46467dd7.css" />
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/main.cd592b68c113.css" />
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/vendor/icon-fonts.f6f008ae9e5a.css" />
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/newsletter.32a7eea3979a.css" />
+
+
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/home.da5dc640f836.css" />
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/product.21f03c408244.css" />
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/rescale-carousel.4a6788857c7d.css" />
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/carousel-home.9ae7d9c6252a.css" />
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/carousel-news.948a2ae482c0.css" />
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/vendor/magnific-popup-1.1.0.30b593b71d76.css" />
+
+
+  <link rel="stylesheet" href="https://dt35u97zq4oy7.cloudfront.net/css/tachyons.72f574a4d8a5.css" />
+  <link rel="icon" type="image/png" href="https://dt35u97zq4oy7.cloudfront.net/img/favicon.ffc681a18c42.png" />
+
+  <!--  Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PSKSK4C');
+</script>
+
+  <!--  End Tag Manager  -->
+
+  <!--  Google Analytics Tracker -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-32985745-1', 'auto', {'allowLinker': true});
+  ga('require', 'linker');
+  ga('linker:autoLink', ['platform.rescale.com', 'blog.rescale.com']);
+  ga('send', 'pageview');
+</script>
+
+  <!--  End Tracker  -->
+
+  <!--  LinkedIn Tracker -->
+  <script type="text/javascript"> _linkedin_partner_id = "1401873"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script>
+<script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script>
+<noscript> <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1401873&fmt=gif" /> </noscript>
+
+  <!--  End Tracker  -->
+
+  <!--  6sense Tracker -->
+  <script>
+  window._6si = window._6si || [];
+  window._6si.push(['enableEventTracking', true]);
+  window._6si.push(['setToken', '909f91df6ec1af82ea0149384cb5f52f']);
+  window._6si.push(['setEndpoint', 'b.6sc.co']);
+  (function() {
+    var gd = document.createElement('script');
+    gd.type = 'text/javascript';
+    gd.async = true;
+    gd.src = '//j.6sc.co/6si.min.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gd, s);
+  })();
+</script>
+
+  <!--  End Tracker  -->
+</head>
+
+<body>
+  <!--  Google Tag Manager (noscript) -->
+  <noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSKSK4C"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+  <!--  End Google Tag Manager  -->
+  <!-- Facebook Feed -->
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=608111276559285&autoLogAppEvents=1" nonce="Vpd8c71m"></script>
+
+  <!-- EndFacebook Feed -->
+
+
+<header class="nav-header dark">
+  <h1 class="dn rescale-title">
+    Rescale - Intelligent HPC Platform
+  </h1>
+
+  <div class="mw8 center ph3 ph4-m pv3 tl flex items-center justify-between">
+    <div class="flex-auto">
+      <a href="/" class="rescale-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540.50665 123.13333">
+  <g transform="matrix(.13333 0 0 -.13333 0 123.133)">
+    <path d="M323.4 97c1-.6 2-.8 2.6-1zm-4 496.6c-23 0-41.8 19.5-41.8 43.6 0 24 18.7 43.5 41.8 43.5h52.4c5.7 12.5 12 24.4 18.6 36 11.6 20 25 39 40 57 76 91.4 190 149.8 316.7 149.8H773c30 0 59-3.4 87-9.5 28.3-6.2 55.4-15.3 81.2-27 121-54.8 211.3-166.8 237.4-301.4h6.3v-.2c80.2 0 153.3-32.7 206.2-85.3 53.3-52.8 86.4-126.2 86.4-207h.3v-.3h-.3c0-80.8-33.2-154-86.6-207.3-53-52.5-126-85-206-85.2V0H386v.2c-29 0-57 4.2-83 12-1.3.4-2.5.7-3.6 1.2l-9.4 3c-.7.4-1.4.6-2 .8-20.8 7.5-40.4 17-58.7 29l-1 .4-2.3 1.6-.3.2-2.3 1.5c-.7.3-1.3.8-2 1.3-4.3 3-8.2 5.7-11.7 8.4-18.8 14.3-22.8 41.5-9 61 13.6 19.4 40 23.5 58.7 9.2l8-6 1.4-.8 2.3-1.4 2-1.4c13-8.4 27.2-15.4 42.2-20.8.5 0 1.2-.3 1.7-.6 2.7-1 4.8-1.6 6.4-2l2.6-.8c19.3-6 39.6-9 60-9v.2h798.7c57.7 0 110.2 23.3 148 60.8 37.6 37.2 60.8 88.4 60.8 144.5v.2c0 56-23.3 107-60.8 144.3-38 37.6-90.4 61-148 61h-42.4c-21.3 0-39.6 17-41.7 39.3-11.5 120-88 221.8-193.3 269.5-20.5 9.5-42 16.7-64.6 21.7-22.7 5-46.2 7.6-70 7.6v-.2h-25.6c-101.4 0-192.4-46.4-253-119.2-11.6-14-22-29-31.5-45.2-9.4-16-17.4-32.8-24-50v-.5c-6.4-16-21.5-27.3-39-27.3h-80" class="rescale-logo-main-color" fill-rule="evenodd"/>
+    <path d="M300.6 152h121c13.8 0 25 11.7 25 26V288c0 37 40 78.7 75.7 78.7H628c14 0 25.2 11.6 25.2 26V518c0 14.3-11.3 26-25 26H507c-14 0-25.2-11.7-25.2-26V408.2c0-37-40-78.4-75.7-78.4H300.6c-13.8 0-25-11.8-25-26V178c0-14.3 11.2-26 25-26" fill="#479abd" fill-rule="evenodd"/>
+    <path d="M92.7 152h121c13.8 0 25 11.7 25 26V288c0 37 40 78.7 76 78.7h105.6c13.7 0 25 11.6 25 26v128c0 14.4-11.3 26-25 26H314.6c-35.8 0-76 41.7-76 78.8V735c0 14.2-11 26-25 26h-121c-13.7 0-25-11.8-25-26V609.3c0-14.3 11.3-26 25-26h106c35.5 0 75.5-41.5 75.5-78.6v-96.6c0-37-40-78.4-75.5-78.4H92.7c-13.8 0-25-11.8-25-26V178c0-14.3 11.2-26 25-26" class="rescale-logo-main-color" fill-rule="evenodd"/>
+    <path d="M137 399.8V484c0 16-12.5 29-28 29H28c-15.5 0-28-13-28-29v-84.2c0-16 12.5-29 28-29h81c15.5 0 28 13 28 29" class="rescale-logo-darkest-gray" fill-rule="evenodd"/>
+    <path d="M776.5 262.5v73.3c0 14-11 25.2-24.2 25.2h-70.7c-13.3 0-24.3-11.3-24.3-25.2v-73.3c0-13.8 11-25.3 24.3-25.3h70.7c13.3 0 24.2 11.5 24.2 25.3" class="rescale-logo-lightest-gray" fill-rule="evenodd"/>
+    <path d="M696 609.2v67.4c0 13-10.2 23.3-22.5 23.3h-65c-12.3 0-22.4-10.5-22.4-23.4v-67.4c0-12.8 10.2-23.3 22.5-23.3h65c12.3 0 22.4 10.4 22.4 23.2M841.4 415v68.3c0 13-10.3 23.6-22.7 23.6h-66c-12.3 0-22.5-10.8-22.5-23.7V415c0-13 10.2-23.6 22.6-23.6h66c12.3 0 22.6 10.6 22.6 23.5" class="rescale-logo-mid-gray" fill-rule="evenodd"/>
+    <path d="M944.6 374.3v44.5c0 8.6-6.6 15.5-14.7 15.5h-43.2c-8 0-15-7-15-15.5v-44.5c0-8.4 7-15.3 15-15.3h43c8.2 0 14.8 7 14.8 15.3" class="rescale-logo-lightest-gray" fill-rule="evenodd"/>
+    <path d="M1672 157l1 286.6c0 54-1.2 93.8-3.5 129.4v1h68l3.4-81.4h.8c19 55.3 64.6 91 116.5 91 7.4 0 13.4-.8 20.8-2.7l.8-.3v-72.2l-3 .3c-7.7.8-15 1.5-24.5 1.5-50.2 0-89.6-37.3-100.2-95.2-1.6-11-2.5-23-2.5-35.7V157H1672M2210.7 407.7c.2 15.3-2 62.5-32.6 93.7-17.5 18-41 27-70 27-74 0-108-64.8-114.7-120.7zm-88.2-259.2c-124.6 0-205 82.5-205 210.2 0 133 80.7 225.7 196.4 225.7 126.6 0 171.6-106 171.6-196.5 0-15.6-1-27.8-2.6-36.4l-.2-.8-290.5 1c2-89 54.4-142.2 140.5-142.2 56.4 0 89.6 10.4 114.5 20.5l1 .6 14.3-55-.7-.5c-27-12-73-26.5-139.5-26.5M2466.4 147.6c-42.8 0-85.5 10.7-117 29.3l-.8.3 18.6 58.6 1-.8c22.7-13.4 62.4-29 100-29 49.2 0 78.7 22.7 78.7 60.7 0 34.6-20 54.4-75.8 75.3-73.8 27-111.3 66.7-111.3 118.4 0 71.2 60.6 122.8 144 122.8 39 0 77-9.7 102-26l.5-.3-18.6-56-1.2.7c-27.4 15.7-55.8 23.8-84.4 23.8-46.7 0-67.6-28-67.6-55.6 0-35 24-50 77.4-70.3 76.8-28.7 109.5-66.5 109.5-126.2 0-76.7-61-126.2-155.3-126.2M2894.3 147.6c-126 0-207.7 84-207.7 213.7 0 130.8 92 222.2 224 222.2 47 0 86-12 105-22.4l.8-.3-17.7-59.4-1 .6c-25 13-54.2 19.5-87 19.5-100.7 0-145.7-78.8-145.7-156.8 0-92.2 57.5-154.2 143-154.2 42 0 70.2 10 92.2 19.6l1 .6 13.5-58.5-.7-.3c-24.4-11.6-68.7-24-119.7-24M3309.2 369c-108 0-162.6-31.2-162.6-92.6 0-52.4 35.8-71 69.3-71 57.2 0 90 37 101 68.7 2.2 6.8 3.4 14.8 3.4 23.8v71l-11.2.2zM3197 147.6c-88 0-128 62.3-128 120.2 0 100.2 87.8 155.4 247 155.4h2.6v7.5c0 43.4-16 95-91.6 95h-1.7c-40 0-79.5-11-108.4-30.6l-1-.7-18 52.6.7.3c36.3 22.7 87.8 36.2 137.8 36.2 132 0 159.6-93 159.6-170.8V257.5c0-39.6 2-73 6-99.3l.3-1.2h-69.8l-7 52.3h-1.6c-19.8-29.6-64.2-61.7-127-61.7M3515 157h77.5v611H3515zM3979 407.7c0 15.3-2 62.5-32.7 93.7-17.5 18-41 27-70 27-74 0-108-64.8-114.8-120.7zm-88.2-259.2c-124.6 0-205 82.5-205 210.2 0 133 80.7 225.7 196.4 225.7 126.7 0 171.6-106 171.6-196.5 0-15.6-.8-27.8-2.6-36.4v-.8l-290.6 1c2-89 54.3-142.2 140.5-142.2 56.5 0 89.6 10.4 114.6 20.5l1 .6 14.3-55-1-.5c-27-12-73-26.5-139.2-26.5" class="rescale-logo-main-color"/>
+  </g>
+</svg>
+
+      </a>
+    </div>
+
+    <div class="dn-xl">
+
+
+
+<span class="dropdown relative pointer db pa2 color-inherit" style="z-index: 3;">
+  <svg class="db" width="16" height="16" viewBox="0 0 23.166 23.166"><path fill="currentcolor" d="M11.836 3.657c-.28.143-.464.462-.688.673-.217.046-.426-.03-.565-.202.022.418-.536.677-.645 1.11.7.468 1.792.47 2.595.643-.044-.75-.688-1.42-.697-2.22z"/><path fill="currentcolor" d="M11.583 0C5.186 0 0 5.187 0 11.583s5.186 11.583 11.583 11.583 11.583-5.187 11.583-11.583S17.98 0 11.583 0zm6.33 19.395c-1.025 1.122-2.896 2.225-4.438 2.188-.307-.39.022-.54.035-.895-.833-.174-1.32-.93-1.745-1.598-.134-.843 1.017-1.558.708-2.255-.547.073-1.102-.064-1.535-.412-.22-.175-.4-.396-.54-.638-.327-.166-.667-.307-1.01-.44-1.07-.424-2.234-.803-3.04-1.668.065-.804-.4-1.24-.92-1.763-.548-.548-.29-.974-.536-1.693-.166-.48-.43-.88-.394-1.41.035-.51.154-1.02.338-1.5.35-.92.854-1.76.944-2.77.07-.42-.607-.54-.09-1.03.548-.51 1.23-1.09 2.028-1.09.406 0 .625.21 1.022.11.382-.09.773-.15 1.162-.22.797-.12 1.578-.27 2.23-.78l.055.06h.627l.056-.052c.883.73 3.048.446 2.754 2.1l-.026.14c-.75.06-1.448-.05-2.16-.296-.01.286.043.604-.028.886 1.152.66 2.66 1.153 3.244 2.46-.495.62-1.124.34-1.79.34-.216.235-.294.413-.21.73-.54.273-1.04.562-1.21 1.18-.09.322-.024.756-.145 1.052-.17.406-.62.653-.79 1.072-.05.552.25 1.023-.27 1.464-.8 0-.87-.646-1.48-.85-.54-.176-1.17-.023-1.73-.133-.76.29-.68 2.247.383 1.88.49-.17.53-.54 1.16-.418.514.26.21.86.166 1.27.335.2.83.066 1.035.49.044.27-.1.8.064 1.02.366.59 1.53-.38 1.83-.482.883-.305 1.88-.21 2.795-.248.69.543 1.793.265 2.393.97.402-.065.73-.295 1.094.04-.136 1.34-1.132 2.314-2.052 3.198z"/></svg>
+  <div class="dropdown-menu absolute pv1 bg-424242 bottom-100 br2 tc h-center box-shadow-bootstrap f6 lh-copy" style="margin-top: 10px">
+    <div class="absolute top-0" style="border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid #424242; transform: translate(-50%, -100%); left: 50%"></div>
+
+
+      <a href="/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">English</a>
+
+
+      <a href="/jp/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">日本語</a>
+
+
+      <a href="/chs/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">简体中文</a>
+
+
+      <a href="/kr/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">한국어</a>
+
+
+      <a href="/frn/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">français</a>
+
+  </div>
+</span>
+
+    </div>
+
+    <svg id="top-nav-trigger" viewBox="0 0 255.42 223.7" width="18.27" height="16" class="pointer dn-xl h1 mv2 ml2">
+      <rect fill="currentcolor" x="0.5" y="0.5" width="254.42" height="44.54" rx="20" ry="20"/>
+      <rect fill="currentcolor" x="0.5" y="89.58" width="254.42" height="44.54" rx="20" ry="20"/>
+      <rect fill="currentcolor" x="0.5" y="178.66" width="254.42" height="44.54" rx="20" ry="20"/>
+    </svg>
+
+    <div class="nav-container" id="top-nav">
+      <div class="nav-menu-container" id="nav-accordion">
+        <div class="nav-dropdown">
+          <a class="nav-collapse-toggler collapsed" data-toggle="collapse" data-target="#collapse-products" data-parent="#nav-accordion">
+            Products
+            <svg class="disclosure-icon" height="8" viewBox="0 0 88 120" width="8"><polygon points="16,0 88,60 16,120"></polygon></svg>
+          </a>
+          <a id="top-nav-products" class="nav-top-level-link " href="/products/platform/">
+            Products
+          </a>
+          <div class="nav-dropdown-menu-container collapse" id="collapse-products">
+            <div class="nav-dropdown-menu flex-l">
+              <div class="nav-dropdown-column">
+                <a class="nav-dropdown-sub-header" href="/products/platform/">Platform Overview</a>
+                <a href="/products/insight/">Rescale Insight</a>
+                <a href="/products/">ScaleX® Editions</a>
+                <div class="pa2 gray">· · · · · · · · · · · · </div>
+                <a href="/products/government/">ScaleX® Government</a>
+                <a href="/products/universities/">ScaleX® Universities</a>
+                <a href="/products/developer/">ScaleX® Developer</a>
+              </div>
+              <div class="nav-dropdown-column">
+                <a class="nav-dropdown-sub-header" href="/features/">Features</a>
+                <a href="/features/workflow/">Workflow</a>
+                <a href="/features/visualization/">ScaleX® Desktop</a>
+                <a href="/security/">Security</a>
+                <a href="/pricing/#usage-models">Usage Models</a>
+                <a href="/infrastructure/#hybrid-on-premise">Hybrid On-Premise</a>
+                <a href="/features/file-management/">File Storage & Transfer</a>
+                <a href="/features/api/">API</a>
+              </div>
+              <div class="nav-dropdown-column">
+                <a class="nav-dropdown-sub-header" href="">Partner Products</a>
+                <a href="/aws/">ScaleX® on AWS</a>
+                <a href="/azure/">ScaleX® on Azure</a>
+                <a href="/gcp/">ScaleX® on GCP</a>
+                <a href="/ibm/#usage-models">ScaleX® on IBM</a>
+                <div class="pa2 gray">· · · · · · · · · · · · </div>
+                <a href="/ansys/#hybrid-on-premise">ANSYS on ScaleX®</a>
+                <a href="/avl/">AVL on ScaleX®</a>
+                <a href="/siemens/">Siemens on ScaleX®</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a class="nav-collapse-toggler collapsed" data-toggle="collapse" data-target="#collapse-solutions" data-parent="#nav-accordion">
+            Solutions
+            <svg class="disclosure-icon" height="8" viewBox="0 0 88 120" width="8"><polygon points="16,0 88,60 16,120"></polygon></svg>
+          </a>
+          <a id="top-nav-solutions" class="nav-top-level-link " href="/solutions/">
+            Solutions
+          </a>
+          <div class="nav-dropdown-menu-container collapse" id="collapse-solutions">
+            <div class="nav-dropdown-menu flex-l">
+              <div class="nav-dropdown-column">
+                <a class="nav-dropdown-sub-header" href="/solutions/#role">By Role</a>
+                <a href="/solutions/engineers-and-scientists/">Engineering</a>
+                <a href="/solutions/cxos/">CxOs</a>
+                <a href="/solutions/hpc-management/">IT & HPC Management</a>
+                <div class="pa2 gray">· · · · · · · · · · · · </div>
+                <a class="nav-dropdown-sub-header" href="/solutions/#other">Other</a>
+                <a href="/solutions/academia/">Academia</a>
+                <a href="/solutions/startups/">Startups</a>
+                <a href="/solutions/distributed-teams/">Distributed Teams</a>
+               </div>
+               <div class="nav-dropdown-column">
+                <a class="nav-dropdown-sub-header" href="/solutions/#industry">By Industry</a>
+                <a href="/solutions/aerospace/">Aerospace</a>
+                <a href="/solutions/automotive/">Automotive</a>
+                <a href="/solutions/consumer-products/">Consumer Products</a>
+                <a href="/solutions/eda-and-electronics/">EDA / Electronics</a>
+                <a href="/solutions/oil-and-gas/">Oil & Gas</a>
+                <a href="/solutions/life-sciences/">Life Sciences</a>
+               </div>
+               <div class="nav-dropdown-column">
+                <a class="nav-dropdown-sub-header" href="/solutions/#industryFocus">By Focus</a>
+                <a href="/solutions/autonomous-driving/">Autonomous Driving</a>
+                <a href="/solutions/automation-api-cli/">Automation (API, CLI)</a>
+                <a href="/solutions/cae-mdo/">CAE and MDO</a>
+                <a href="/solutions/digital-twin/">Digital Twin</a>
+                <a href="/solutions/driver-assistance-adas/">Driver Assistance (ADAS)</a>
+                <a href="/solutions/disaster-recovery/">Disaster Recovery</a>
+                <a href="/solutions/iot-big-data/">IoT and Big Data</a>
+                <a href="/solutions/machine-learning/">Machine Learning</a>
+                <a href="/solutions/spdm/">SPDM</a>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a class="nav-collapse-toggler collapsed" data-toggle="collapse" data-target="#collapse-infrastructure" data-parent="#nav-accordion">
+            Infrastructure
+            <svg class="disclosure-icon" height="8" viewBox="0 0 88 120" width="8"><polygon points="16,0 88,60 16,120"></polygon></svg>
+          </a>
+          <a id="top-nav-infrastructure" class="nav-top-level-link " href="/infrastructure/">
+            Infrastructure
+          </a>
+          <div class="nav-dropdown-menu-container collapse" id="collapse-infrastructure">
+            <div class="nav-dropdown-menu flex-l">
+              <div class="nav-dropdown-column">
+                <a class="nav-dropdown-sub-header" href="/infrastructure/">Overview</a>
+                <a href="/infrastructure/#global-network">Global Network</a>
+                <a href="/infrastructure/#hardware-technologies">Hardware Technology</a>
+                <a href="/storage/">Multi-cloud Storage</a>
+                <a href="/infrastructure/#core-types">Coretypes</a>
+                <a href="/pricing/#usage-models">Usage Models</a>
+                <a href="/security/">Security</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="/software/" class="">
+            Software
+          </a>
+        </div>
+
+        <div class="nav-dropdown">
+          <a class="nav-collapse-toggler collapsed" data-toggle="collapse" data-target="#collapse-partners" data-parent="#nav-accordion">
+            Partners
+            <svg class="disclosure-icon" height="8" viewBox="0 0 88 120" width="8"><polygon points="16,0 88,60 16,120"></polygon></svg>
+          </a>
+          <a id="top-nav-partners" class="nav-top-level-link " href="/partners/">
+            Partners
+          </a>
+
+          <div class="nav-dropdown-menu-container collapse" id="collapse-partners">
+            <div class="nav-dropdown-menu flex-l">
+              <div class="nav-dropdown-column">
+                <a class="nav-dropdown-sub-header" href="/partners/">Overview</a>
+                <a href="/partners/#channel-partner">Channel</a>
+                <a href="/partners/#technology-partner">Technology</a>
+                <a href="/partners/#oem-partner">OEM</a>
+                <div class="pa2 gray">· · · · · · · · · · · · </div>
+                <a class="nav-dropdown-sub-header" href="/partners-list/">List of Partners</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+            <a class="nav-collapse-toggler collapsed" data-toggle="collapse" data-target="#collapse-resources" data-parent="#nav-accordion">
+              Resources
+              <svg class="disclosure-icon" height="8" viewBox="0 0 88 120" width="8"><polygon points="16,0 88,60 16,120"></polygon></svg>
+            </a>
+            <a id="top-nav-resources" class="nav-top-level-link" href="https://resources.rescale.com/">
+              Resources
+            </a>
+
+            <div class="nav-dropdown-menu-container collapse" id="collapse-resources">
+              <div class="nav-dropdown-menu flex-l">
+                <div class="nav-dropdown-column">
+                  <a href="https://resources.rescale.com/">Resource Center</a>
+                  <a href="https://docs.rescale.com/">Documentation</a>
+                  <a href="https://resources.rescale.com/?wpv-resource-type=white-paper">White Papers</a>
+                  <a href="/about/#media-kit">Media Kit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-dropdown">
+            <a class="nav-collapse-toggler collapsed" data-toggle="collapse" data-target="#collapse-company" data-parent="#nav-accordion">
+              Company
+              <svg class="disclosure-icon" height="8" viewBox="0 0 88 120" width="8"><polygon points="16,0 88,60 16,120"></polygon></svg>
+            </a>
+            <a id="top-nav-company" class="nav-top-level-link" href="/about/">
+              Company
+            </a>
+
+            <div class="nav-dropdown-menu-container collapse" id="collapse-company">
+              <div class="nav-dropdown-menu flex-l">
+                <div class="nav-dropdown-column">
+                  <a href="/about/">About</a>
+                  <a href="/investors/">Investors</a>
+                  <a href="https://resources.rescale.com//blog">Blog</a>
+                  <a href="https://resources.rescale.com//news">Announcements</a>
+                  <a href="https://resources.rescale.com//events">Events</a>
+                  <a href="/jobs/">Careers</a>
+                  <a href="/legal/">Legal</a>
+                  <a href="/company/locations/">Office Locations</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="dn db-xl">
+
+
+
+<span class="dropdown relative pointer db pa2 " style="z-index: 3;">
+  <svg class="db" width="16" height="16" viewBox="0 0 23.166 23.166"><path fill="currentcolor" d="M11.836 3.657c-.28.143-.464.462-.688.673-.217.046-.426-.03-.565-.202.022.418-.536.677-.645 1.11.7.468 1.792.47 2.595.643-.044-.75-.688-1.42-.697-2.22z"/><path fill="currentcolor" d="M11.583 0C5.186 0 0 5.187 0 11.583s5.186 11.583 11.583 11.583 11.583-5.187 11.583-11.583S17.98 0 11.583 0zm6.33 19.395c-1.025 1.122-2.896 2.225-4.438 2.188-.307-.39.022-.54.035-.895-.833-.174-1.32-.93-1.745-1.598-.134-.843 1.017-1.558.708-2.255-.547.073-1.102-.064-1.535-.412-.22-.175-.4-.396-.54-.638-.327-.166-.667-.307-1.01-.44-1.07-.424-2.234-.803-3.04-1.668.065-.804-.4-1.24-.92-1.763-.548-.548-.29-.974-.536-1.693-.166-.48-.43-.88-.394-1.41.035-.51.154-1.02.338-1.5.35-.92.854-1.76.944-2.77.07-.42-.607-.54-.09-1.03.548-.51 1.23-1.09 2.028-1.09.406 0 .625.21 1.022.11.382-.09.773-.15 1.162-.22.797-.12 1.578-.27 2.23-.78l.055.06h.627l.056-.052c.883.73 3.048.446 2.754 2.1l-.026.14c-.75.06-1.448-.05-2.16-.296-.01.286.043.604-.028.886 1.152.66 2.66 1.153 3.244 2.46-.495.62-1.124.34-1.79.34-.216.235-.294.413-.21.73-.54.273-1.04.562-1.21 1.18-.09.322-.024.756-.145 1.052-.17.406-.62.653-.79 1.072-.05.552.25 1.023-.27 1.464-.8 0-.87-.646-1.48-.85-.54-.176-1.17-.023-1.73-.133-.76.29-.68 2.247.383 1.88.49-.17.53-.54 1.16-.418.514.26.21.86.166 1.27.335.2.83.066 1.035.49.044.27-.1.8.064 1.02.366.59 1.53-.38 1.83-.482.883-.305 1.88-.21 2.795-.248.69.543 1.793.265 2.393.97.402-.065.73-.295 1.094.04-.136 1.34-1.132 2.314-2.052 3.198z"/></svg>
+  <div class="dropdown-menu absolute pv1 bg-424242 bottom-100 br2 tc h-center box-shadow-bootstrap f6 lh-copy" style="margin-top: 10px">
+    <div class="absolute top-0" style="border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid #424242; transform: translate(-50%, -100%); left: 50%"></div>
+
+
+      <a href="/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">English</a>
+
+
+      <a href="/jp/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">日本語</a>
+
+
+      <a href="/chs/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">简体中文</a>
+
+
+      <a href="/kr/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">한국어</a>
+
+
+      <a href="/frn/" class="db pv1 ph3 tc white fw4" style="white-space: nowrap">français</a>
+
+  </div>
+</span>
+
+        </div>
+
+        <div class="flex ph2 na2-xl">
+          <a href="/signup/" id="signup-top-nav" class="w-50 w-auto-xl pa2 f6 f7-xl ba fw3 ma2 color-inherit nav-color">
+            Sign Up
+          </a>
+
+          <a href="/login/" id="login-top-nav" class="w-50 w-auto-xl pa2 f6 f7-xl ba fw3 mv2 ml2 mr2 mr0-xl rescale-blue rescale-light-blue-hover">
+            Log In
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<section
+  class="bg-00080c cover bg-right"
+  style="background-image:linear-gradient(to right, transparent, rgba(1, 36, 54, 1)"
+  >
+  <div class="bg-black-70 pv4 pv3-m ph4 tc lh-title">
+<div class="flex-m justify-center items-center na2">
+  <div class="ma2 f5 flex-l">
+    <span class="white ph4">Read our official statement about the SolarWinds Orion Security Incident.</span>
+  </div>
+  <div class="flex-l pt0-m pt3">
+  <a id="solar-wind-hack-home-link-banner" href="https://resources.rescale.com/rescale-official-statement-on-solarwinds-security-incident/" class="ib ba b--rescale-blue f5 fw4 w4 tc pv2 br1 white bg-rescale-blue">
+    Learn More
+  </a>
+  </div>
+</div>
+</div>
+  <h1 class="mw8 ph4 center f2 fw3 mb0 mt0 pt5 lh-title ttu tl white">
+    The Rescale Intelligent Platform
+    </h1>
+    <div class="mw8 center ph4 tc tl-ns flex-m">
+      <div class="w-50-m pr4-l pb5">
+        <div class="f5 fw3 lh-copy">
+          <h1 class="mw8 center f2 fw3 mb0 mt0 lh-title ttu tl rescale-blue">
+            <span class="rescale-blue">Any Application. <br>Any Infrastructure. <br>Always Optimized.
+            </h1>
+          <p class="mt3 mb4 mw7 f3 white">
+            Industry’s First Intelligent Control Plane for Hybrid and Multi-cloud Big Compute
+            <div class="mt4 mb4">
+              <a href="/products/platform/" id="insight-home-banner" class="dib ba b--rescale-blue f5 fw4 w4 tc pv2 br1 white bg-rescale-blue">
+                Learn More
+              </a>
+            </div>
+            <p class="white">Rescale combines software-defined flexibility, hardware acceleration, and intelligent operations for new levels of performance, architectural control and R&D productivity.</p>
+            <ul class="white bullet pl3">
+              <li>Full stack economic optimization across software & hardware</li>
+              <li>Complete architectural control across hybrid and multi-cloud</li>
+              <li>Seamless R&D experience abstracted from infrastructure</li>
+            </ul>
+
+        </div>
+        </div>
+        <div class="w-60-m">
+          <img class="w-100 pv4" src="https://dt35u97zq4oy7.cloudfront.net/img/product/rescale_control_plane.a7ec47d64fdf.svg">
+        </div>
+      </div>
+</section>
+
+<section class="pv4 lh-solid cf silver bb b--moon-gray">
+  <div ng-controller="slidesCtrl" style="height: 26px">
+    <div logo-slide-2 item-list="customerList" link="'/solutions/industries/'"></div>
+  </div>
+</section>
+
+<div class="cover bg-right">
+<div class="mw8 center pt5 ph4 pb4">
+  <h2 class="f3 ma0 lh-title mid-gray ttu">
+    Big compute made simpler, smarter, and faster
+  </h2>
+  <div class="mw8 center ph4-m">
+    <p class="pb3 gray f5 ph3-ns mb3">
+      IT leaders use the Rescale intelligent platform to help researchers tackle the world’s most challenging science and engineering problems.
+    </p>
+  </div>
+  <div class="flex center flex-wrap pt5 na3 gray">
+    <div class="flex flex-column mb5 ph3 w-50-ns w-33-m">
+      <div
+        class="mh4-l mb3 h4 bg-center contain hover-scale"
+        style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/solutions/icon-accelerate-development.c2783d3a889d.svg); height: 4rem"
+      ></div>
+      <h3 class="f5 rescale-gray fw4 mb3 lh-title ttu">
+        Performance and Efficiency
+      </h3>
+      <p class="mv0 lh-copy f5">
+        Maximize the economic impact of hybrid and multi-cloud operations using the latest architectures and performance intelligence.
+      </p>
+    </div>
+
+    <div class="flex flex-column mb5 ph3 w-50-ns w-33-m">
+      <div
+        class="mh4-l mb3 h4 bg-center contain hover-scale"
+        style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/solutions/icon-control-scale.7ab2dde0427e.svg); height: 4rem"
+      ></div>
+      <h3 class="f5 mid-gray fw4 mb3 lh-title ttu">
+        Control at Scale
+      </h3>
+      <p class="mv0 lh-copy f5">
+        Enable global and multi-BU organizations with controlled and secure computing environments with the highest levels of service.
+      </p>
+    </div>
+
+    <div class="flex flex-column mb5 ph3 w-50-ns w-33-m">
+      <div
+        class="mh4-l mb3 h4 bg-center contain hover-scale"
+        style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/solutions/icon-empower.41fc8c63f7d6.svg); height: 4rem"
+      ></div>
+      <h3 class="f5 rescale-gray fw4 mb3 lh-title ttu">
+        Empowered R&D
+      </h3>
+      <p class="mv0 lh-copy f5">
+        Accelerate commercializing new innovations with researcher-centric workflows and collaboration, abstracted from infrastructure.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="relative bg-00080c moon-gray" style="background-image: linear-gradient(to bottom, transparent, rgba(1, 36, 54, 1))">
+  <div class="mw8 center pv5 ph4">
+    <h2 class="f3 f3 tc lh-solid ma0 ttu rescale-blue">
+      Rescale enables modern HPC operations
+    </h2>
+    <p class="f5 mt0 white pt4">
+    Rescale complements your software and cloud or on-prem resources to deliver a turnkey simulation experience.
+    </p>
+    <h2 class="f3 fw3 tc pt2 lh-title mb0 white" style="word-spacing: 7px;">
+      Modern HPC = Simulation Software + <span class="rescale-blue">Rescale Intelligent Platform</span> + Cloud/Datacenter Hardware
+    </h2>
+    <div class="flex-m items-center">
+      <div class="w-60-m ph0-l ph4-m">
+        <img class="w-100 pv4" src="https://dt35u97zq4oy7.cloudfront.net/img/product/intelligent_control_plane.1ba137503b8a.svg">
+      </div>
+      <div class="tl m-40-m pl5-l f5 pr0-l ph4-m">
+        <h2 class="f3 fw3 f3 tl lh-solid ma0 rescale-blue">
+          Rescale Control
+        </h2>
+      <ul class="bullet pl3 pb5">
+        <li>Application lifecycle management & license management</li>
+        <li>Infrastructure as code with multi-cloud & hybrid infrastructure automation</li>
+      </ul>
+      <h2 class="f3 fw3 f3 tl lh-solid ma0 rescale-blue">
+        Rescale Intelligence
+      </h2>
+      <ul class="bullet pl3">
+        <li>Software + hardware performance intelligence</li>
+        <li>Pricing, budgeting & planning intelligence</li>
+        <li>User & simulation workflow intelligence</li>
+        <li>Security & compliance intelligence</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pv4 pt5-m">
+  <div class="mw8 ph4 center">
+    <h2 class="mt0 mb4 rescale-blue f3 fw4 lh-title">Explore the possibilities of the cloud operating model across a variety of resources and applications</h2>
+
+    <div class="na3 na2-ns flex flex-wrap justify-center tl">
+      <div class="pa3 pa2-ns w-100 w-50-ns w-25-m flex">
+        <a class="cta ba b--light-gray bg-white w-100 flex flex-column" href="https://info.rescale.com/safecdp">
+          <img class="w-100" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/samsung-safe-cdp.c52d60382388.png">
+          <div class="ma3">
+            <div class="cta-type">Partner</div>
+          </div>
+          <h2 class="f4 fw4 mt0 mh3 mb3 flex-auto mid-gray">Samsung Advanced Foundry Ecosystem (SAFE™) Cloud Design Platfrom (CDP) Powered by Rescale</h2>
+          <div class="ttu f8 fw4 pa3 rescale-blue lh-solid">Read More</div>
+        </a>
+      </div>
+      <div class="pa3 pa2-ns w-100 w-50-ns w-25-m flex">
+        <a class="cta ba b--light-gray bg-white w-100 flex flex-column" href="https://resources.rescale.com/rescale-launches-industrys-first-intelligent-control-plane-for-hybrid-and-multi-cloud-big-compute/">
+          <img class="w-100" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/cta-plane.1276e33b2d9e.png">
+          <div class="ma3">
+            <div class="cta-type">Post</div>
+          </div>
+          <h2 class="f4 fw4 mt0 mh3 mb3 flex-auto mid-gray">Rescale Launches Industry’s First Intelligent Control Plane for Hybrid and Multi-Cloud Big Compute</h2>
+          <div class="ttu f8 fw4 pa3 rescale-blue lh-solid">Read More</div>
+        </a>
+      </div>
+      <div class="pa3 pa2-ns w-100 w-50-ns w-25-m flex">
+        <a class="cta ba b--light-gray bg-white w-100 flex flex-column" href="https://info.rescale.com/white-papers/cloud-3.0-the-rise-of-big-compute">
+          <img class="w-100" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/cta-cloud-3.0.d7b4d52b94e8.png">
+          <div class="ma3">
+            <div class="cta-type">White Paper</div>
+          </div>
+          <h2 class="f4 fw4 mt0 mh3 mb3 flex-auto mid-gray">Cloud 3.0: The Rise of Big Compute</h2>
+          <div class="ttu f8 fw4 pa3 rescale-blue lh-solid">Download</div>
+        </a>
+      </div>
+      <div class="pa3 pa2-ns w-100 w-50-ns w-25-m flex">
+        <a class="cta ba b--light-gray bg-white w-100 flex flex-column" href="https://info.rescale.com/case-studies/boom-supersonic">
+          <img class="w-100" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/cta-boom.cf6423951ef1.jpg">
+          <div class="ma3">
+            <div class="cta-type">Case Study</div>
+          </div>
+          <h2 class="f4 fw4 mt0 mh3 mb3 flex-auto mid-gray">Cloud HPC Simulation Enables Boom’s Supersonic Passenger Jet to Take Off</h2>
+          <div class="ttu f8 fw4 pa3 rescale-blue lh-solid">Read More</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="mv2">
+      <a href="https://resources.rescale.com/" class="dib mt4 pv2 ph3 f5 fw4 bg-white rescale-blue nowrap">
+        View other resources
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="bg-nearer-white">
+  <div class="mw8 center ph4 pt5 pb4">
+    <h2 class="f3 fw4 mt0 mb4 lh-title mid-gray">
+      Find out how we drive innovation
+    </h2>
+    <div class="flex-m na2 lh-title">
+      <div class="pa2 content-box" style="flex-basis: calc(2 * 100% / 3 + (112px / 27) - 16px)">
+        <a class="db white relative" data-company-video-button href="https://www.youtube.com/watch?v=umiGy7fe5zc">
+          <div class="aspect-ratio--16x9 cover" style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/landing-page/video-company.8d4160c997c7.jpg)"></div>
+          <div class="absolute right-1 bottom-1 tr flex items-center">
+            <div>
+              <span class="f5 fw5 ttu db">Who are we?</span>
+              <span class="f6 fw3 db light-gray ml3">Rescale offers unlimited performance</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244.12 244.12" class="db ml3 flex-none w2 h2">
+              <circle cx="122.06" cy="122.06" r="117.06" fill="none" stroke="currentcolor" stroke-width="8" />
+              <path fill="currentcolor" d="M87.4 177.34V68.78a3.07 3.07 0 0 1 4.6-2.66l93.94 54.23a3.07 3.07 0 0 1 0 5.32l-94 54.33a3.07 3.07 0 0 1-4.54-2.66z"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+      <div class="flex-auto flex-ns flex-column-m">
+        <div class="pa2 w-50-ns w-auto-m">
+          <a class="db white relative" data-company-video-button href="https://www.youtube.com/watch?v=a59IRj9SEVw">
+            <div class="aspect-ratio--16x9 cover" style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/landing-page/video-aerion.1fcfe218bff4.png)"></div>
+            <div class="absolute right-1 bottom-1 tr flex items-center">
+              <div>
+                <span class="f5 fw5 ttu db">Aerion Supersonic</span>
+                <span class="f6 fw3 db light-gray ml3">Aerion Runs Supersonic Jet Simulations on Rescale's Big Compute Platform</span>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244.12 244.12" class="db ml3 flex-none w2 h2">
+                <circle cx="122.06" cy="122.06" r="117.06" fill="none" stroke="currentcolor" stroke-width="8" />
+                <path fill="currentcolor" d="M87.4 177.34V68.78a3.07 3.07 0 0 1 4.6-2.66l93.94 54.23a3.07 3.07 0 0 1 0 5.32l-94 54.33a3.07 3.07 0 0 1-4.54-2.66z"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div class="pa2 w-50-ns w-auto-m">
+          <a class="db white relative" data-company-video-button href="https://www.youtube.com/watch?v=tPaq3Hmeg5Y">
+            <div class="aspect-ratio--16x9 cover" style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/landing-page/video-manor.dbacb24f3ab3.jpg);"></div>
+            <div class="absolute right-1 bottom-1 tr flex items-center">
+              <div>
+                <span class="f5 fw5 ttu db">Manor Racing</span>
+                <span class="f6 fw3 db light-gray ml3">Gaining the edge in Formula 1</span>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244.12 244.12" class="db ml3 flex-none w2 h2">
+                <circle cx="122.06" cy="122.06" r="117.06" fill="none" stroke="currentcolor" stroke-width="8" />
+                <path fill="currentcolor" d="M87.4 177.34V68.78a3.07 3.07 0 0 1 4.6-2.66l93.94 54.23a3.07 3.07 0 0 1 0 5.32l-94 54.33a3.07 3.07 0 0 1-4.54-2.66z"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-nearer-white">
+  <a href="https://resources.rescale.com/?wpv-resource-type=video" class="ba f5 fw4 pa2 ph3 ma2 mb5 br1 rescale-light-blue-hover">
+    View more videos
+  </a>
+  <div class="mw8 center ph4 pb5 pt4 tl">
+    <div class="bg-white pa4 pa5-l">
+      <h2 class="f3 fw4 ma0 mid-gray lh-solid">Solutions by Role</h2>
+      <p class="f5 gray lh-title mt2 mb3">
+        Rescale offers solutions at all levels in the enterprise.
+      </p>
+
+      <div class="flex-m na2 lh-title">
+        <div class="pa2 flex w-third-m">
+          <a class="bg-rescale-blue white w-100 pv3 ph4 flex items-center" href="/solutions/cxos/">
+            <img class="w3 w-auto-m h3 mv2" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/role-cxo.e9dd0c8f3135.svg">
+            <div class="ml3">
+              <h3 class="f4 fw5 mt0 mb2">CxO</h3>
+              <div class="f8 fw4 ttu">Learn More</div>
+            </div>
+          </a>
+        </div>
+        <div class="pa2 flex w-third-m">
+          <a class="db bg-rescale-blue white w-100 pv3 ph4 flex items-center" href="/solutions/engineers-and-scientists/">
+            <img class="w3 w-auto-m h3 mv2" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/role-engineer.c38a83e52092.svg">
+            <div class="ml3">
+              <h3 class="f4 fw5 mt0 mb2">Engineers & Scientists</h3>
+              <div class="f8 fw4 ttu">Learn More</div>
+            </div>
+          </a>
+        </div>
+        <div class="pa2 flex w-third-m">
+          <a class="db bg-rescale-blue white w-100 pv3 ph4 flex items-center" href="/solutions/hpc-management/">
+            <img class="w3 w-auto-m h3 mv2" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/role-hpc.5640f43e8bef.svg">
+            <div class="ml3">
+              <h3 class="f4 fw5 mt0 mb2 break-word">HPC Management</h3>
+              <div class="f8 fw4 ttu">Learn More</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <h2 class="f3 fw4 ma0 mid-gray lh-solid mt5">Solutions by Industry</h2>
+      <p class="f5 gray lh-title mt2 mb3">
+        Rescale provides solutions to any industry dependent on big compute.
+      </p>
+
+      <div class="flex flex-wrap center justify-center tc f6 na2 lh-title">
+        <div class="w-50 w-25-ns w-1-7-l pa2">
+          <a href="/solutions/aerospace/" class="fw5 o-80 glow">
+            <img class="db w3 h3 center" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/industry-aerospace.8b0fc257ca4d.svg">
+            <span>Aerospace</span>
+          </a>
+        </div>
+        <div class="w-50 w-25-ns w-1-7-l pa2">
+          <a href="/solutions/automotive/" class="fw5 o-80 glow">
+            <img class="db w3 h3 center" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/industry-automotive.c42e532ff1ea.svg">
+            <span>Automotive</span>
+          </a>
+        </div>
+        <div class="w-50 w-25-ns w-1-7-l pa2">
+          <a href="/solutions/oil-and-gas/" class="fw5 o-80 glow">
+            <img class="db w3 h3 center" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/industry-oil-gas.910be182d85d.svg">
+            <span>Oil & Gas</span>
+          </a>
+        </div>
+        <div class="w-50 w-25-ns w-1-7-l pa2">
+          <a href="/solutions/life-sciences/" class="fw5 o-80 glow">
+            <img class="db w3 h3 center" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/industry-life-sciences.9a75d103700c.svg">
+            <span>Life Sciences</span>
+          </a>
+        </div>
+        <div class="w-50 w-25-ns w-1-7-l pa2">
+          <a href="/solutions/eda-and-electronics/" class="fw5 o-80 glow">
+            <img class="db w3 h3 center" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/industry-electronics.8cd93a7f703a.svg">
+            <span>Electronics</span>
+          </a>
+        </div>
+        <div class="w-50 w-25-ns w-1-7-l pa2">
+          <a href="/solutions/academia/" class="fw5 o-80 glow">
+            <img class="db w3 h3 center" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/industry-academia.5bd265044276.svg">
+            <span>Academia</span>
+          </a>
+        </div>
+        <div class="w-50 w-25-ns w-1-7-l pa2">
+          <a href="/solutions/machine-learning/" class="fw5 o-80 glow">
+            <img class="db w3 h3 center" src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/industry-machine-learning.88e2afab21e8.svg">
+            <span>Machine Learning</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="relative lh-copy tc tl-m">
+  <a id="customer-testimonials"></a>
+  <ul class="testimonial-slider ma0 bg-black" data-rescale-carousel>
+    <li class="cover bg-center flex flex-column justify-center" style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/landing-page/vahanabg.aa01cc973d23.jpg)">
+      <div class="mw8 pv5 ph4 ph5-m w-100 center">
+        <a href="https://resources.rescale.com/resource/a3-project-vahana-rescale-power-personal-flight/" target="_blank" class="f5 mw6-m db">
+          <img src="https://dt35u97zq4oy7.cloudfront.net/img/companies/airbus.6382882bfdb7.svg" class="h2">
+          <p class="mv3 white">
+            “Rescale’s scalable computing resources enable rapid analysis of complex aerodynamics. To reduce the technical risks of our project with high-fidelity predictive software requires immense computational resources. Rescale offers us a turnkey solution to connect our software tools to high-performance hardware infrastructure.”
+          </p>
+          <p class="rescale-blue fw5 mt3 mb0">Zach Lovering, Vahana Project Executive</p>
+        </a>
+      </div>
+    </li>
+    <li class="cover bg-center flex flex-column justify-center" style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/landing-page/boombg.b33e2d6af33a.jpg)">
+      <div class="mw8 pv5 ph4 ph5-m w-100 center">
+        <a href="https://resources.rescale.com/boom-technology-leverages-rescale-platform-to-enable-a-rebirth-of-supersonic-passenger-travel/" target="_blank" class="f5 mw6-m db">
+          <img src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/boomlogo.afed6657c6d4.svg" class="h2">
+          <p class="mv3 white">
+            “Rescale’s cloud platform is a game-changer for engineering. It gives Boom computing resources comparable to building a large on-premise HPC center. Rescale lets us move fast with minimal capital spending and resources overhead.”
+          </p>
+          <p class="rescale-blue fw5 mt3 mb0">Joshua Krall, Co-founder & CTO</p>
+        </a>
+      </div>
+    </li>
+    <li class="cover bg-center flex flex-column justify-center" style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/landing-page/rcrbg.22769547e65d.jpg)">
+      <div class="mw8 pv5 ph4 ph5-m w-100 center">
+        <a href="https://resources.rescale.com/resource/the-need-for-speed-drives-nascars-richard-childress-racing-to-the-cloud/" target="_blank" class="f5 mw6-m db">
+          <img src="https://dt35u97zq4oy7.cloudfront.net/img/companies/rcr.f3ec69092e9d.svg" class="h2">
+          <p class="mv3 white">
+            “In an industry defined by speed, it’s a boon to be able to run jobs instantly without waiting in a queue. Not only does it accelerate our simulations, but it gives us the agility to debug and run design variations and ‘what-if’ scenarios on the turn of a dime.”
+          </p>
+          <p class="rescale-blue fw5 mt3 mb0">Seth Morris, Aerodynamicist</p>
+        </a>
+      </div>
+    </li>
+    <li class="cover bg-center flex flex-column justify-center" style="background-image: url(https://dt35u97zq4oy7.cloudfront.net/img/landing-page/trekbg.30b001724775.jpg)">
+      <div class="mw8 pv5 ph4 ph5-m w-100 center">
+        <a href="https://support.rescale.com/customer/en/portal/articles/2778993-trek-bicycle-uses-rescale-to-run-cutting-edge-coupled-optimization-analysis" target="_blank" class="f5 mw6-m db">
+          <img src="https://dt35u97zq4oy7.cloudfront.net/img/landing-page/treklogo.013d63302412.svg" class="h2">
+          <p class="mv3 white">
+            "With Rescale's ScaleX platform, we can build complex Star-CCM+ and HEEDS simulations and run analyses much faster than we can internally - drastically improving our simulation process."
+          </p>
+          <p class="rescale-blue fw5 mt3 mb0">Chad Manuell, Director of Engineering</p>
+        </a>
+      </div>
+    </li>
+  </ul>
+
+  <a class="moon-gray absolute pointer v-center o-80 glow dn db-m" style="left: 1.5rem" data-slider-prev>
+    <svg viewBox="0 0 82 134" width="15" height="33" fill="currentcolor">
+      <g transform="translate(100, 47), scale(-1, 1)">
+        <g transform="rotate(-45, 100, 20)">
+          <circle cx="10" cy="10" r="10px" />
+          <rect x="10" y="0" width="90" height="20" />
+        </g>
+        <g transform="rotate(45, 100, 20)">
+          <circle cx="10" cy="30" r="10" />
+          <rect x="10" y="20" width="90" height="20" />
+        </g>
+      </g>
+    </svg>
+  </a>
+
+  <a class="moon-gray absolute pointer v-center o-80 glow dn db-m" style="right: 1.5rem" data-slider-next>
+    <svg viewBox="0 0 82 134" width="15" height="33" fill="currentcolor">
+      <g transform="translate(-19, 47)">
+        <g transform="rotate(-45, 100, 20)">
+          <circle cx="10" cy="10" r="10px" />
+          <rect x="10" y="0" width="90" height="20" />
+        </g>
+        <g transform="rotate(45, 100, 20)">
+          <circle cx="10" cy="30" r="10" />
+          <rect x="10" y="20" width="90" height="20" />
+        </g>
+      </g>
+    </svg>
+  </a>
+</div>
+
+<div class="pv4 overflow-hidden bg-near-white" ng-controller="menuSliderCtrl" ng-show="newsList.length" ng-cloak>
+  <div class="mw8 center">
+    <div class="news-slider" flex-slider>
+      <ul class="slides">
+        <li ng-repeat="news in newsList">
+          <h4 class="f4 fw4 mv0">
+            <a ng-href="{[{ news.link }]}" ng-bind="news.title" target="_blank"></a><br>
+            <span ng-bind="news.desc"></span>
+            <span class="home-slider-date" ng-if="news.eventDate"> / <span ng-bind="news.eventDate"></span></span>
+          </h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section class="pv5 dn db-l">
+  <h2 class="f3 fw4 mt0 mb4 mid-gray">
+    Recent Articles
+  </h2>
+  <div class="mw8 center">
+    <ul id="feed" class="community cf"></ul>
+  </div>
+</section>
+
+<section class="pv5 ph3 ph5-m cf bg-near-white-m border-bottom">
+  <h3 class="f3 fw3 ph2 lh-title mt0 mb4 mw7 center mid-gray">
+    Accelerate innovation in your enterprise with HPC in the cloud
+  </h3>
+  <a id="contact-sales-home-cta-footer" class="btn btn-blue btn-lg" href="http://info.rescale.com/contact_sales">
+    Contact Sales
+  </a>
+</section>
+
+
+  <section class="pv5 ph3 ph5-m cf bg-424242">
+    <div class="center mw8 flex-m items-center">
+      <div class="v-mid flex-none">
+      <h3 class="f3 fw3 ph4 lh-title mv4 center mw6 white">
+        Sign up to our Newsletter
+      </h3>
+    </div>
+      <!--[if lte IE 8]>
+      <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+      <![endif]-->
+      <div class="bl-m b--silver ph4 vh">
+        <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+    	       portalId: "1937450",
+    	       formId: "8fd98836-fa35-4e9b-b2e7-e024a67531f6",
+    	       css: ""
+          });
+      </script>
+    </div>
+  </section>
+    <footer class="bg-dark-gray footer tl pa3">
+      <div class="f6 mw8 center moon-gray cf pa3">
+        <ul id="upcomingEvents" class="fr-m w-50-m w-30-l ph3 tl tr-m">
+          <li id="headTitle" class="head-title white fw5">
+            <a class="ttu" href="https://resources.rescale.com/events/">
+              Upcoming Events
+            </a>
+          </li>
+        </ul>
+
+
+          <ul class="fr w-100 w-50-m w-30-l ph3">
+            <li class="ttu white fw5">
+              <a href="https://resources.rescale.com/news/">
+                Press</a>
+              </li>
+
+              <li class="truncate">
+                <a href="https://resources.rescale.com/rescale-enables-faster-time-to-market-for-nissan/">Rescale Enables Faster Time to Market for Nissan</a>
+              </li>
+
+              <li class="truncate">
+                <a href="https://resources.rescale.com/announcements/rescale-announces-strategic-partnership-offering-with-siemens-plm/">Rescale Announces Strategic Partnership Offering with Siemens PLM</a>
+              </li>
+
+              <li class="truncate">
+                <a href="https://resources.rescale.com/announcements/rescale-announces-innovations-to-accelerate-time-to-results/">Rescale Announces Innovations to Accelerate Time to Results</a>
+              </li>
+
+              <li class="truncate">
+                <a href="https://resources.rescale.com/announcements/rescale-receives-2018-hpcwire-editors-choice-award-for-best-hpc-in-the-cloud-platform/">Rescale Receives 2018 HPCwire Editors Choice Award for Best HPC in the Cloud Platform</a>
+              </li>
+
+          </ul>
+
+          <div class="cf db dn-l"></div>
+
+        <ul class="fl w-30 w-15-m ph3">
+          <li class="ttu white fw5">Company</li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/investors/">Investors</a></li>
+          <li><a href="https://resources.rescale.com/blog">Blog</a></li>
+          <li><a href="/jobs/">Careers</a></li>
+          <li><a href="/legal/">Legal</a></li>
+        </ul>
+
+        <ul class="fl w-third-m w-25-l ph3">
+          <li class="ttu fw5 white">
+            <a href="http://info.rescale.com/contact_sales" target="_blank">Contact</a>
+          </li>
+          <li class="silver"><a href="tel:+18557372253">1-855-737-2253</a></li>
+          <li><a href="http://info.rescale.com/contact_sales" target="_blank">Contact Us</a></li>
+          <li><a href="/partners/">Become a Partner</a></li>
+          <li class="silver">33 New Montgomery St., Suite 950<br />San Francisco, CA 94105</li>
+        </ul>
+
+
+
+        <div class="cf"></div>
+
+        <div class="pa3 cf silver">
+          <div class="fl">&copy; 2021 Rescale, Inc. All Rights Reserved.</div>
+          <div class="fr">
+            <span class="dib mh1">follow us</span>
+            <a href="https://www.linkedin.com/company/rescale/" class="dib mh1 o-80 glow" target="_blank">
+              <svg width="17" height="16" viewBox="0 0 430.117 411.00201"><path fill="currentcolor" d="M430.117 251.985v159.017H337.93V262.635c0-37.27-13.335-62.707-46.704-62.707-25.473 0-40.632 17.142-47.3 33.724-2.433 5.928-3.06 14.18-3.06 22.477V411H148.65s1.242-251.285 0-277.32h92.21v39.31c-.187.293-.43.61-.606.895h.606v-.896c12.25-18.868 34.13-45.823 83.102-45.823 60.673 0 106.157 39.636 106.157 124.818zM52.183 0C20.635 0 0 20.693 0 47.905c0 26.62 20.038 47.94 50.96 47.94h.615c32.16 0 52.16-21.317 52.16-47.94C103.127 20.693 83.734 0 52.182 0zM5.477 411.002H97.66v-277.32H5.478v277.32z"/></svg>
+            </a>
+            <a href="https://twitter.com/rescaleinc" class="dib mh1 o-80 glow" target="_blank">
+              <svg width="19" height="15" viewBox="0 0 250 203.18"><path d="M78.62 203.18A145.2 145.2 0 0 1 0 180.14a104.4 104.4 0 0 0 12.24.7 102.92 102.92 0 0 0 63.7-22A51.35 51.35 0 0 1 28 123.28a51.2 51.2 0 0 0 23.16-.88A51.3 51.3 0 0 1 10 72.1v-.65a50.9 50.9 0 0 0 23.23 6.42A51.33 51.33 0 0 1 17.4 9.4 145.62 145.62 0 0 0 123.12 63a51.32 51.32 0 0 1 87.4-46.78A102.8 102.8 0 0 0 243.1 3.76a51.47 51.47 0 0 1-22.55 28.37A102.38 102.38 0 0 0 250 24.05a104.36 104.36 0 0 1-25.6 26.56c.1 2.2.16 4.44.16 6.66C224.56 125 173 203.2 78.62 203.2" fill="currentcolor"/></svg>
+            </a>
+            <a href="https://www.facebook.com/rescaleinc/" class="dib mh1 o-80 glow" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 257.717 257.719"><path fill="currentcolor" d="M243.494 257.72c7.854 0 14.223-6.37 14.223-14.226V14.224C257.717 6.367 251.35 0 243.494 0H14.224C6.367 0 0 6.367 0 14.224v229.27c0 7.855 6.366 14.225 14.224 14.225h229.27z"/><path fill="#424242" d="M177.82 257.72v-99.804h33.5l5.016-38.895H177.82V94.19c0-11.262 3.128-18.936 19.276-18.936l20.596-.01V40.458c-3.562-.474-15.788-1.533-30.012-1.533-29.695 0-50.025 18.126-50.025 51.413v28.684H104.07v38.896h33.585v99.803h40.166z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/bootstrap-native.min.3683d222e8fd.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/angular.min.4a031ce4bccd.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/angular-sanitize.min.efc2247571cb.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/jquery-1.8.3.min.e1288116312e.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/jquery-ui.1.10.2.min.3e6acb1e6426.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/underscore-min.137af05d496f.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/constants.c07e27989192.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/main.2a4ec66a46cf.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/angular.setup.d69aecba8df9.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/angular.directives.ed4cf46fcef8.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/angular.filters.5ff83d2dc026.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/moment.a3c5ceeede21.js"></script>
+
+
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/jquery.flexslider.min.8ed7ad733685.js"></script>
+  <script type="text/javascript">
+    var newsList = [];
+
+    window.platformItems = [
+      {
+        label: 'Comprehensive Software',
+
+        image: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/screensoftware.e706ed9f305f.png",
+        description1: 'Turnkey access to over 400+ applications, ported and tuned for HPC. ',
+        description2: 'Pay-as-you-go (on-demand) licensing available or you can bring your own license server',
+        url: "/software/",
+        icon: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/platform-software.c3f17487ba62.svg",
+      },
+      {
+        label: 'Global Infrastructure',
+
+        image: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/screenglobal.3380838d9ad1.png",
+        description1: 'Powerful administrative portal for team and project management.',
+        description2: 'Manage HPC resources, software licenses, access controls and budgets.',
+        url: "/infrastructure/",
+        icon: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/platform-globe.f27aa72193e7.svg",
+      },
+      {
+        label: 'Web-based Workflow',
+
+        image: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/screenhardware.4d27b6ba58fa.png",
+        description1: 'Easy-to-use web-based simulation workflow including pre and post processing, and remote desktop.',
+        description2: 'Reduce research and development cycles with unlimited cloud HPC resources.',
+        url: "/features/workflow/",
+        icon: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/platform-workflow.c5cee223af53.svg",
+      },
+      {
+        label: 'IT / HPC Management',
+
+        image: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/screenadmin.96461201d80a.png",
+        description1: 'Powerful administrative portal for team and project management.',
+        description2: 'Manage HPC resources, software licenses, access controls and budgets.',
+        url: "/solutions/hpc-management/",
+        icon: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/platform-admin.a627857c9645.svg",
+      },
+      {
+        label: 'Cloud Security',
+
+        image: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/screensecurity.804591fd5f7d.png",
+        description1: 'Rescale is fully compliant with the strictest standards for cloud security.',
+        description2: 'Data protection is implemented across every step of the user experience.',
+        url: "/security/",
+        icon: "https://dt35u97zq4oy7.cloudfront.net/img/landing-page/platform-security.ec4bac6f0bfc.svg",
+      },
+    ];
+
+    marketingApp.controller('slidesCtrl', ['$scope', function($scope) {
+      $scope.customerList = rConstant.customerList;
+    }]);
+
+    marketingApp.controller('menuSliderCtrl', ['$scope', function($scope) {
+      $scope.newsList = $.map(newsList, function(news) {
+        if (news.eventDate) {
+          news.eventDate = moment(news.eventDate).format('ll');
+        }
+        return news;
+      });
+
+      $scope.flexSliderOptions = {
+        animationSpeed: 2000,
+        slideshowSpeed: 5000,
+        animation: 'slide',
+        pauseOnHover: true,
+      };
+    }]);
+
+    $.ajax({
+      url: '/feeds/articles/',
+      success: function(results) {
+        var container = $('#feed');
+        var template =
+          '<li>' +
+            '<a href="{url}"><img src="{imgSrc}" alt="{imgAlt}"></a>' +
+            '<h4 class="truncate"><a href="{url}">{title}</a></h4>' +
+            '<p>{content}</p>' +
+            '<a href="{url}" class="ttu fw4">Read More</a>' +
+          '</li>';
+
+        results.data.slice(0, 3).forEach(function(entry, i) {
+          var $content = $(entry.content);
+          var img = $content.find('img').get(0) || {};
+          var context = {
+            content: $content.text().slice(0, 120) + '...',
+            imgAlt: img.alt || '',
+            imgSrc: img.src || 'https://dt35u97zq4oy7.cloudfront.net/img/bg-community.cd52261b5676.png',
+            title: entry.title,
+            url: entry.link,
+          };
+          var compiled = template.replace(/{(\w+)}/g, function(_, token) {
+            return context[token];
+          });
+          container.append(compiled);
+        });
+      },
+    })
+  </script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/hammer.min.dd16fba4974c.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/jqueryrotatecompressed.4ccde830c478.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/jquery.magnific-popup-1.1.0.min.fb07e852b551.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/vendor/moment.a3c5ceeede21.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/logo-slide-controller.42fddd245226.js"></script>
+  <script type="text/javascript" src="https://dt35u97zq4oy7.cloudfront.net/js/carousel.a4e676a2a00a.js"></script>
+  <script type="text/ng-template" id="logoSlide2Tmpl">
+  <div class="relative mw8 nowrap center" style="font-size: 0">
+    <div ng-show="showArrows()" ng-click="rotatePrevious()" class="dib pointer v-mid mh3 o-60 glow">
+      <svg viewBox="0 0 82 134" width="15" height="33" fill="currentcolor">
+        <g transform="translate(100, 47), scale(-1, 1)">
+          <g transform="rotate(-45, 100, 20)">
+            <circle cx="10" cy="10" r="10px" />
+            <rect x="10" y="0" width="90" height="20" />
+          </g>
+          <g transform="rotate(45, 100, 20)">
+            <circle cx="10" cy="30" r="10" />
+            <rect x="10" y="20" width="90" height="20" />
+          </g>
+        </g>
+      </svg>
+    </div>
+    <a ng-href="{[{ item.link || $parent.link }]}"
+      ng-repeat="item in itemList | limitTo: numItemsToDisplay track by $index"
+      target="{[{ $parent.newWindow ? '_blank' : '_self' }]}"
+      class="dib ph3 v-mid"
+    >
+      <span class="dn" ng-bind="item.name"></span>
+      <span class="{[{ 'logo logo-' + item.id }]}"></span>
+    </a>
+    <div ng-show="showArrows()" ng-click="rotateNext()" class="dib pointer v-mid mh3 o-60 glow">
+      <svg viewBox="0 0 82 134" width="15" height="33" fill="currentcolor">
+        <g transform="translate(-19, 47)">
+          <g transform="rotate(-45, 100, 20)">
+            <circle cx="10" cy="10" r="10px" />
+            <rect x="10" y="0" width="90" height="20" />
+          </g>
+          <g transform="rotate(45, 100, 20)">
+            <circle cx="10" cy="30" r="10" />
+            <rect x="10" y="20" width="90" height="20" />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</script>
+
+  <script>
+    $(document).ready(function() {
+      var preloadImgs = [
+        "https://dt35u97zq4oy7.cloudfront.net/img/companies/nissan_logo.0df2b868de05.svg",
+        "https://dt35u97zq4oy7.cloudfront.net/img/companies/trek.7578ed287ea2.svg",
+        "https://dt35u97zq4oy7.cloudfront.net/img/companies/toyo.fe9e27c101df.png",
+        "https://dt35u97zq4oy7.cloudfront.net/img/companies/denso-logo.ef2943ab146f.svg",
+        "https://dt35u97zq4oy7.cloudfront.net/img/companies/sse-logo.67502ab77833.png",
+      ];
+
+      preloadImgs.forEach(function(src) {
+        var img = new Image();
+        img.src = src;
+      });
+
+      $('[data-rescale-carousel]').rescaleCarousel();
+
+      $('[data-company-video-button]').magnificPopup({
+        type: 'iframe',
+        closeOnBgClick: false,
+      });
+    });
+  </script>
+
+
+
+
+
+<!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/1937450.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+
+</body>
+</html>
