@@ -46,7 +46,7 @@ class Crawler:
                     self.visited_urls.add(url)
 
                     # # Start the crawl
-                    results = self.pool.submit(self.crawl, url)
+                    self.pool.submit(self.crawl, url)
 
                     # Suspend the thread temporarily
                     time.sleep(2)
